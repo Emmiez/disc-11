@@ -28,7 +28,6 @@ Playing Music on   :: ${await this.client.getTotalPlaying()} guilds
 
 Platform           :: ${process.platform}
 Arch               :: ${process.arch}
-OS Uptime          :: ${formatMS(osUptime() * 1000)}
 Memory             :: ${this.bytesToSize(await this.client.getTotalMemory("rss"))}
 Process Uptime     :: ${formatMS(process.uptime() * 1000)}
 Bot Uptime         :: ${formatMS(this.client.uptime!)}
@@ -40,10 +39,9 @@ YTDL-Core version  :: v${(await import(this.getPackageJSON("ytdl-core"))).versio
 Opus Encoder       :: ${opusEncoderName} v${(await import(this.getPackageJSON(opusEncoderName))).version}
 Bot Version        :: v${(await import(path.resolve(process.cwd(), "package.json"))).version}
 Data Strategy      :: ${await this.client.config.YouTubeDataRetrievingStrategy === "api" ? "REST API" : "HTML SCRAPING"}
-Source code        :: https://github.com/zhycorp/disc-11
 \`\`\`
         `)
-                .setAuthor(`${this.client.user?.username as string} - A simple Discord music bot`)
+                .setAuthor(`${this.client.user?.username as string} - Hi, Im a simple discord music bot`)
         ).catch(e => this.client.logger.error("ABOUT_CMD_ERR:", e));
     }
 
