@@ -19,7 +19,6 @@ export class AboutCommand extends BaseCommand {
         message.channel.send(
             createEmbed("info", `
 \`\`\`asciidoc
-Users count        :: ${await this.client.getUsersCount()}
 Channels count     :: ${await this.client.getChannelsCount()}
 Guilds count       :: ${await this.client.getGuildsCount()}
 Shards count       :: ${this.client.shard ? `${this.client.shard.count}` : "N/A"}
